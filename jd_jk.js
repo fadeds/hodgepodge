@@ -28,12 +28,14 @@ function getSkuNumber(queryBody, remarks) {
   )
     .then((d) => d.data)
     .then(async (d) => {
+      console.log(d)
       let { success, errMsg, data } = d
-      let { hasNext, result } = data
-      arr = [...arr,...result]
       if (!success) {
         await notify.sendNotify(`京东免单监控`, errMsg)
+        return
       }
+      let { hasNext, result } = data
+      arr = [...arr,...result]
       // 查询结束再筛选
       if (hasNext) {
         pageNum++
