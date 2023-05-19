@@ -3,7 +3,7 @@ cron "30 * * * * *" autoSignin.js, tag=联通库存监控
 */
 const $ = new Env("联通库存监控")
 const axios = require("axios")
-// const notify = require("./sendNotify")
+const notify = require("./sendNotify")
 let arr=[]
 // 需要cookie
 let cookie = process.env.Authorization
