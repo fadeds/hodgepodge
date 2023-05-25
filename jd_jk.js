@@ -30,7 +30,8 @@ function getSkuNumber(queryBody, remarks) {
     .then(async (d) => {
       let { success, errMsg, data } = d
       if (!success) {
-        await notify.sendNotify(`京东免单监控`, errMsg)
+        console.log(errMsg)
+        // await notify.sendNotify(`京东免单监控`, errMsg)
         return
       }
       let { hasNext, result } = data
