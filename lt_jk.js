@@ -26,7 +26,9 @@ function getSkuNumber() {
       let { code, errMsg, data } = d
       let { list } = data
       if (code!=='0000') {
-        await notify.sendNotify(`联通库存监控`, errMsg)
+        console.log(d)
+//         await notify.sendNotify(`联通库存监控`, errMsg)
+        return
       }
       // 筛选
       let arr1 = list.filter((item) => item.stock)
